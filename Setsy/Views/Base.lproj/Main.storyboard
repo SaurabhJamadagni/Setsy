@@ -97,6 +97,11 @@
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="magnifyingglass" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -140,15 +145,19 @@
                             <constraint firstItem="FTy-aI-Jwa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wzf-OK-bdC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventPicker" destination="FTy-aI-Jwa" id="Jxz-6Z-5wB"/>
+                        <outlet property="searchTextField" destination="tss-uj-dUj" id="Em1-z9-HJ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.76923076923077" y="101.65876777251184"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="hbd-af-8hu">
             <objects>
-                <viewController id="NVv-U8-1Rp" sceneMemberID="viewController">
+                <viewController id="NVv-U8-1Rp" customClass="ResultsViewController" customModule="Setsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pTa-oP-jvw">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

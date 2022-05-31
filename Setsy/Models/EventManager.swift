@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct PickerViewData {
+struct EventManager {
+    
     let selectionOptions = ["Sunrise", "Sunset"]
 }
