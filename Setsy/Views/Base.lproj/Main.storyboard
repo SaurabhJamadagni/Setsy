@@ -16,14 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-light" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-WY-iQK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-light" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-WY-iQK">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbB-ab-EOZ">
-                                <rect key="frame" x="142" y="738" width="130" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RbB-ab-EOZ">
+                                <rect key="frame" x="130" y="740" width="130" height="50"/>
                                 <color key="backgroundColor" red="0.89043205979999995" green="0.89057844880000003" blue="0.89040106529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wkp-TD-eNJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="rhi-l7-U4V"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Check">
@@ -36,48 +38,107 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Place" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tss-uj-dUj">
-                                <rect key="frame" x="15" y="349" width="271" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
-                            </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fuR-1n-Ty0">
-                                <rect key="frame" x="300" y="51" width="75" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                            </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTy-aI-Jwa">
-                                <rect key="frame" x="0.0" y="447" width="390" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="8OD-d6-AEU">
+                                <rect key="frame" x="0.0" y="44" width="390" height="365"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEP-ew-dRV" userLabel="time view">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="182"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3c-I9-Ril">
+                                                <rect key="frame" x="20" y="39" width="81" height="36.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7R8-hg-z2i">
+                                                <rect key="frame" x="109.00000000000001" y="39" width="46.666666666666671" height="36.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fuR-1n-Ty0">
+                                                <rect key="frame" x="305" y="20" width="75" height="75"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="75" id="3c6-0S-8AW"/>
+                                                    <constraint firstAttribute="height" constant="75" id="BeA-k3-Hhe"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="7R8-hg-z2i" firstAttribute="leading" secondItem="L3c-I9-Ril" secondAttribute="trailing" constant="8" id="EFg-gF-W0s"/>
+                                            <constraint firstItem="fuR-1n-Ty0" firstAttribute="top" secondItem="fEP-ew-dRV" secondAttribute="top" constant="20" id="Fe1-yS-nzY"/>
+                                            <constraint firstItem="L3c-I9-Ril" firstAttribute="leading" secondItem="fEP-ew-dRV" secondAttribute="leading" constant="20" id="SjC-tA-gaw"/>
+                                            <constraint firstItem="L3c-I9-Ril" firstAttribute="top" secondItem="fEP-ew-dRV" secondAttribute="top" constant="39" id="Uxg-Md-7kf"/>
+                                            <constraint firstAttribute="trailing" secondItem="fuR-1n-Ty0" secondAttribute="trailing" constant="10" id="amd-lI-YDq"/>
+                                            <constraint firstItem="7R8-hg-z2i" firstAttribute="top" secondItem="fEP-ew-dRV" secondAttribute="top" constant="39" id="sWg-zu-KpH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opp-BH-FsC" userLabel="search elements">
+                                        <rect key="frame" x="0.0" y="183" width="390" height="182"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Place" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tss-uj-dUj">
+                                                <rect key="frame" x="20" y="56" width="263" height="70"/>
+                                                <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="RCk-Sp-hZr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="go"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDW-8Y-noc">
+                                                <rect key="frame" x="308" y="56" width="70" height="70"/>
+                                                <color key="backgroundColor" red="0.89043205979999995" green="0.89057844880000003" blue="0.89040106529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="aEt-e0-01k"/>
+                                                    <constraint firstAttribute="width" constant="70" id="cZI-Mb-J8Q"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="magnifyingglass" catalog="system"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fDW-8Y-noc" firstAttribute="leading" secondItem="tss-uj-dUj" secondAttribute="trailing" constant="25" id="Guf-F3-W3s"/>
+                                            <constraint firstItem="fDW-8Y-noc" firstAttribute="centerY" secondItem="opp-BH-FsC" secondAttribute="centerY" id="lGc-4O-Yef"/>
+                                            <constraint firstAttribute="trailing" secondItem="fDW-8Y-noc" secondAttribute="trailing" constant="12" id="oKh-g5-O1m"/>
+                                            <constraint firstItem="tss-uj-dUj" firstAttribute="leading" secondItem="opp-BH-FsC" secondAttribute="leading" constant="20" id="r64-fE-XTs"/>
+                                            <constraint firstItem="tss-uj-dUj" firstAttribute="centerY" secondItem="opp-BH-FsC" secondAttribute="centerY" id="rgI-cW-dLa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="opp-BH-FsC" firstAttribute="leading" secondItem="8OD-d6-AEU" secondAttribute="leading" id="ZLA-gJ-Wlf"/>
+                                    <constraint firstItem="fEP-ew-dRV" firstAttribute="leading" secondItem="8OD-d6-AEU" secondAttribute="leading" id="aGn-fZ-J8a"/>
+                                    <constraint firstAttribute="trailing" secondItem="opp-BH-FsC" secondAttribute="trailing" id="bdQ-PS-dyo"/>
+                                    <constraint firstItem="opp-BH-FsC" firstAttribute="top" secondItem="fEP-ew-dRV" secondAttribute="bottom" constant="1" id="eha-75-p9v"/>
+                                    <constraint firstAttribute="trailing" secondItem="fEP-ew-dRV" secondAttribute="trailing" id="fAl-ov-nv4"/>
+                                    <constraint firstItem="fEP-ew-dRV" firstAttribute="top" secondItem="8OD-d6-AEU" secondAttribute="top" id="hTb-aN-Ujc"/>
+                                    <constraint firstAttribute="bottom" secondItem="opp-BH-FsC" secondAttribute="bottom" id="n7O-Ln-Rhc"/>
+                                    <constraint firstItem="opp-BH-FsC" firstAttribute="top" secondItem="fEP-ew-dRV" secondAttribute="bottom" constant="1" id="we3-U6-hwB"/>
+                                </constraints>
+                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTy-aI-Jwa">
+                                <rect key="frame" x="35" y="449" width="320" height="216"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDW-8Y-noc">
-                                <rect key="frame" x="301" y="349" width="73" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89043205979999995" green="0.89057844880000003" blue="0.89040106529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="magnifyingglass" catalog="system"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3c-I9-Ril">
-                                <rect key="frame" x="15" y="71" width="81" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7R8-hg-z2i">
-                                <rect key="frame" x="104" y="70" width="47" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RbB-ab-EOZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0M6-tg-S5g"/>
+                            <constraint firstItem="8OD-d6-AEU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7ka-GI-iA0"/>
+                            <constraint firstItem="FTy-aI-Jwa" firstAttribute="top" secondItem="8OD-d6-AEU" secondAttribute="bottom" constant="40" id="CQ4-6n-fzG"/>
+                            <constraint firstItem="RbB-ab-EOZ" firstAttribute="top" secondItem="FTy-aI-Jwa" secondAttribute="bottom" constant="75" id="Qnx-AD-Cs7"/>
+                            <constraint firstAttribute="bottom" secondItem="WnI-WY-iQK" secondAttribute="bottom" id="S7V-hD-iHw"/>
+                            <constraint firstAttribute="trailing" secondItem="WnI-WY-iQK" secondAttribute="trailing" id="Scq-Pr-k7Y"/>
+                            <constraint firstItem="8OD-d6-AEU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SzA-LM-Kmx"/>
+                            <constraint firstItem="WnI-WY-iQK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VE3-Me-2m6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RbB-ab-EOZ" secondAttribute="bottom" constant="20" id="WS9-x0-z5r"/>
+                            <constraint firstItem="8OD-d6-AEU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ptJ-jB-Psf"/>
+                            <constraint firstItem="WnI-WY-iQK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sBP-Gu-Es0"/>
+                            <constraint firstItem="FTy-aI-Jwa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wzf-OK-bdC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,10 +153,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD5-Bv-IGA">
-                                <rect key="frame" x="134" y="719" width="130" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD5-Bv-IGA">
+                                <rect key="frame" x="130" y="740" width="130" height="50"/>
                                 <color key="backgroundColor" red="0.89043205979999995" green="0.89057844880000003" blue="0.89040106529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Ko1-1b-HKX"/>
+                                    <constraint firstAttribute="height" constant="50" id="g5O-Xj-fhM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Home">
@@ -105,66 +169,124 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-Ew-1e6">
-                                <rect key="frame" x="15" y="142" width="94" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQW-qO-u8R">
-                                <rect key="frame" x="15" y="229" width="81" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:oo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7o-x5-R8v">
-                                <rect key="frame" x="205" y="229" width="47" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Until Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrv-5m-IcQ">
-                                <rect key="frame" x="15" y="292" width="141" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxr-3p-RHH">
-                                <rect key="frame" x="205" y="292" width="62" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgR-EY-KMA">
-                                <rect key="frame" x="313" y="291" width="61" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sunrise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-6K-ORy">
-                                <rect key="frame" x="205" y="136" width="69" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-ze-qne">
-                                <rect key="frame" x="313" y="229" width="34" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Psf-Dy-sLj" userLabel="upper-stack">
+                                <rect key="frame" x="0.0" y="44" width="390" height="249"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oe-UP-eOX" userLabel="head">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="117.66666666666667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayf-Ew-1e6">
+                                                <rect key="frame" x="20.000000000000007" y="36" width="93.666666666666686" height="45.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="sunrise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-6K-ORy">
+                                                <rect key="frame" x="309" y="29.166666666666671" width="69" height="55.5"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="57" id="YpC-1w-stY"/>
+                                                    <constraint firstAttribute="width" constant="69" id="kHd-fV-ZfX"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="ddE-6K-ORy" firstAttribute="centerY" secondItem="0oe-UP-eOX" secondAttribute="centerY" id="1Pc-AN-tKa"/>
+                                            <constraint firstItem="ayf-Ew-1e6" firstAttribute="leading" secondItem="0oe-UP-eOX" secondAttribute="leading" constant="20" id="Ijp-xM-CN7"/>
+                                            <constraint firstAttribute="trailing" secondItem="ddE-6K-ORy" secondAttribute="trailing" constant="12" id="Te0-Ep-blY"/>
+                                            <constraint firstItem="ayf-Ew-1e6" firstAttribute="centerY" secondItem="0oe-UP-eOX" secondAttribute="centerY" id="bbE-D9-SCn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIc-8Q-ppZ" userLabel="data-columns">
+                                        <rect key="frame" x="0.0" y="118.66666666666664" width="390" height="130.33333333333337"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="pID-C4-OxF" userLabel="column-1">
+                                                <rect key="frame" x="20" y="21" width="140.66666666666666" height="89.666666666666686"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQW-qO-u8R">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80.333333333333329" height="27.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Until Sunrise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrv-5m-IcQ">
+                                                        <rect key="frame" x="0.0" y="62.33333333333335" width="140.66666666666666" height="27.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="9Zj-I4-Wh3" userLabel="column-2">
+                                                <rect key="frame" x="210" y="20.999999999999943" width="62" height="89.666666666666686"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:oo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7o-x5-R8v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="27.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxr-3p-RHH">
+                                                        <rect key="frame" x="0.0" y="62.33333333333335" width="62" height="27.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="9Xs-eA-VbF" userLabel="column-3">
+                                                <rect key="frame" x="317" y="20" width="61" height="89.666666666666686"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5j-ze-qne">
+                                                        <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="27.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgR-EY-KMA">
+                                                        <rect key="frame" x="0.0" y="62.33333333333335" width="61" height="27.333333333333336"/>
+                                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="9Zj-I4-Wh3" firstAttribute="centerY" secondItem="MIc-8Q-ppZ" secondAttribute="centerY" id="4tv-6X-rfz"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Xs-eA-VbF" secondAttribute="trailing" constant="12" id="8Rq-Fv-dVW"/>
+                                            <constraint firstItem="pID-C4-OxF" firstAttribute="centerY" secondItem="MIc-8Q-ppZ" secondAttribute="centerY" id="JgV-Ym-kgx"/>
+                                            <constraint firstItem="9Xs-eA-VbF" firstAttribute="leading" secondItem="9Zj-I4-Wh3" secondAttribute="trailing" constant="45" id="TZv-CK-O6Q"/>
+                                            <constraint firstItem="9Xs-eA-VbF" firstAttribute="centerY" secondItem="MIc-8Q-ppZ" secondAttribute="centerY" id="Vsq-P4-43p"/>
+                                            <constraint firstItem="pID-C4-OxF" firstAttribute="leading" secondItem="MIc-8Q-ppZ" secondAttribute="leading" constant="20" id="aK5-Vj-6WM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0oe-UP-eOX" secondAttribute="trailing" id="00Y-ks-oXT"/>
+                                    <constraint firstItem="MIc-8Q-ppZ" firstAttribute="top" secondItem="0oe-UP-eOX" secondAttribute="bottom" constant="1" id="RSh-07-aqc"/>
+                                    <constraint firstItem="MIc-8Q-ppZ" firstAttribute="top" secondItem="0oe-UP-eOX" secondAttribute="bottom" constant="1" id="VEP-EM-OH2"/>
+                                    <constraint firstItem="0oe-UP-eOX" firstAttribute="top" secondItem="Psf-Dy-sLj" secondAttribute="top" id="YQF-xw-xm2"/>
+                                    <constraint firstItem="0oe-UP-eOX" firstAttribute="leading" secondItem="Psf-Dy-sLj" secondAttribute="leading" id="Ymu-Th-RJH"/>
+                                    <constraint firstAttribute="trailing" secondItem="MIc-8Q-ppZ" secondAttribute="trailing" id="dvb-tj-xPi"/>
+                                    <constraint firstItem="MIc-8Q-ppZ" firstAttribute="leading" secondItem="Psf-Dy-sLj" secondAttribute="leading" id="eY9-WW-LSg"/>
+                                    <constraint firstAttribute="bottom" secondItem="MIc-8Q-ppZ" secondAttribute="bottom" id="ya3-ON-Z2F"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qC9-NG-BEG"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Psf-Dy-sLj" firstAttribute="trailing" secondItem="qC9-NG-BEG" secondAttribute="trailing" id="8Vn-NR-1jK"/>
+                            <constraint firstItem="dD5-Bv-IGA" firstAttribute="centerX" secondItem="pTa-oP-jvw" secondAttribute="centerX" id="ItY-ST-dcc"/>
+                            <constraint firstItem="Psf-Dy-sLj" firstAttribute="leading" secondItem="qC9-NG-BEG" secondAttribute="leading" id="bjV-Rn-82b"/>
+                            <constraint firstItem="Psf-Dy-sLj" firstAttribute="top" secondItem="qC9-NG-BEG" secondAttribute="top" id="itl-4j-bz7"/>
+                            <constraint firstItem="qC9-NG-BEG" firstAttribute="bottom" secondItem="dD5-Bv-IGA" secondAttribute="bottom" constant="20" id="vvn-We-Pr2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nul-b1-mea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
