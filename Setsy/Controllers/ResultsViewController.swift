@@ -9,13 +9,21 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    @IBOutlet weak var eventLabel: UILabel!
+    @IBOutlet weak var untilEventLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
