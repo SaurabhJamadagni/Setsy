@@ -15,6 +15,10 @@
 		09C720F72844E4AB0068E272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C720F52844E4AB0068E272 /* LaunchScreen.storyboard */; };
 		09C7210228452C9D0068E272 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C7210128452C9D0068E272 /* EventManager.swift */; };
 		09C72104284643BB0068E272 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C72103284643BB0068E272 /* ResultsViewController.swift */; };
+		09F6701228487DF700CEDD85 /* Confidentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6701128487DF700CEDD85 /* Confidentials.swift */; };
+		09F67014285218A000CEDD85 /* CoordinatesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67013285218A000CEDD85 /* CoordinatesData.swift */; };
+		09F6701628521D1A00CEDD85 /* CoordinatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6701528521D1A00CEDD85 /* CoordinatesModel.swift */; };
+		09F67018285226CE00CEDD85 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F67017285226CE00CEDD85 /* EventData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		09C720F82844E4AB0068E272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09C7210128452C9D0068E272 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		09C72103284643BB0068E272 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		09F6701128487DF700CEDD85 /* Confidentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confidentials.swift; sourceTree = "<group>"; };
+		09F67013285218A000CEDD85 /* CoordinatesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesData.swift; sourceTree = "<group>"; };
+		09F6701528521D1A00CEDD85 /* CoordinatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatesModel.swift; sourceTree = "<group>"; };
+		09F67017285226CE00CEDD85 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				09C7210128452C9D0068E272 /* EventManager.swift */,
+				09F6701128487DF700CEDD85 /* Confidentials.swift */,
+				09F67013285218A000CEDD85 /* CoordinatesData.swift */,
+				09F6701528521D1A00CEDD85 /* CoordinatesModel.swift */,
+				09F67017285226CE00CEDD85 /* EventData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,9 +182,13 @@
 			files = (
 				09C720EF2844E4A80068E272 /* ViewController.swift in Sources */,
 				09C720EB2844E4A80068E272 /* AppDelegate.swift in Sources */,
+				09F67018285226CE00CEDD85 /* EventData.swift in Sources */,
 				09C7210228452C9D0068E272 /* EventManager.swift in Sources */,
 				09C72104284643BB0068E272 /* ResultsViewController.swift in Sources */,
+				09F67014285218A000CEDD85 /* CoordinatesData.swift in Sources */,
+				09F6701628521D1A00CEDD85 /* CoordinatesModel.swift in Sources */,
 				09C720ED2844E4A80068E272 /* SceneDelegate.swift in Sources */,
+				09F6701228487DF700CEDD85 /* Confidentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

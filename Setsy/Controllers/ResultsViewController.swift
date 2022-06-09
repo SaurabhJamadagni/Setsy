@@ -13,10 +13,12 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var untilEventLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    var locationName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        locationLabel.text = locationName
     }
     
     
