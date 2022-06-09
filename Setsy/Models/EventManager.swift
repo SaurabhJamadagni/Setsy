@@ -29,23 +29,19 @@ struct EventManager {
     func requestOpenWeather(urlString: String) {
         if let openWeatherURL = URL(string: urlString) {
             let session = URLSession(configuration: .default)
-            let coordinatesTask = session.dataTask(with: openWeatherURL, completionHandler: handle(data:url:error:))
-            coordinatesTask.resume()
-        }
-        
-    }
-    
-    func handle(data: Data?, url: URLResponse?, error: Error?) {
-        if error != nil {
-            print(error!)
-            return
-        }
-        
-        if let safeCoordinates = data {
-            if let coordinates = self.parseOpenWeatherJSON(coordinates: safeCoordinates) {
-                getEventTime(event: self.selectedOption, coordinateModel: coordinates)
+            let coordinatesTask = session.dataTask(with: openWeatherURL) {(data, url, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                if let safeCoordinates = data {
+                    if let coordinates = self.parseOpenWeatherJSON(coordinates: safeCoordinates) {
+                        getEventTime(event: self.selectedOption, coordinateModel: coordinates)
+                    }
+                }
             }
-            
+            coordinatesTask.resume()
         }
     }
     
