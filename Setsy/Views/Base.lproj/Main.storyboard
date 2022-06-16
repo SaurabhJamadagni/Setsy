@@ -309,6 +309,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="eventImage" destination="ddE-6K-ORy" id="ceP-OY-XXu"/>
                         <outlet property="eventLabel" destination="XQW-qO-u8R" id="wVm-Dl-ElI"/>
                         <outlet property="locationLabel" destination="ayf-Ew-1e6" id="VLf-hu-WhQ"/>
                         <outlet property="untilEventLabel" destination="mrv-5m-IcQ" id="YKf-9e-T1g"/>

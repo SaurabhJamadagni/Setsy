@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct EventData {
+struct EventData: Codable {
     let results: Results
 }
 
-struct Results {
+struct Results: Codable {
     let sunrise: String
     let sunset: String
 }

@@ -7,12 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, EventManagerDelegate {
 
     @IBOutlet weak var eventPicker: UIPickerView!
     @IBOutlet weak var searchTextField: UITextField!
     
     var eventManager = EventManager()
+    var city = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +21,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         eventPicker.dataSource = self
         eventPicker.delegate = self
         searchTextField.delegate = self
+        eventManager.delegate = self
         
         searchTextField.borderStyle = UITextField.BorderStyle.roundedRect
         
     }
     
     @IBAction func fetchInformation(_ sender: UIButton) {
-        performSegue(withIdentifier: "showResult", sender: self)
+        eventManager.getCoordinates(locationName: self.city)
+//        performSegue(withIdentifier: "showResult", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showResult" {
             let destinationVC = segue.destination as! ResultsViewController
-            destinationVC.locationName = "works!"
+            destinationVC.locationName = self.city
         }
     }
     
@@ -54,9 +57,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
-        print(searchTextField.text!)
-        if let city = searchTextField.text {
-            eventManager.getCoordinates(locationName: city)
+        if let enteredCity = searchTextField.text {
+            self.city = enteredCity
         }
         return true
     }
@@ -68,6 +70,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             textField.placeholder = "Enter place here"
             return false
         }
+    }
+    
+    func updateUI(eventModel: EventModel) {
+        DispatchQueue.main.async {
+//            self.eventImage.image = UIImage(systemName: eventModel.eventImage)
+//            self.eventLabel.text = eventModel.eventName
+        }
+    }
+
+    func didFailWithError(error: Error) {
+        print(error)
     }
 
 }

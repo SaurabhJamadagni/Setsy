@@ -8,17 +8,22 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var untilEventLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     
+    var eventManager = EventManager()
     var locationName: String?
+    var event: EventModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        locationLabel.text = locationName
+//        eventManager.delegate = self
+        
+        locationLabel.text = self.locationName
     }
     
     
@@ -26,6 +31,18 @@ class ResultsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+//    func updateUI(eventModel: EventModel) {
+//        DispatchQueue.main.async {
+//            self.eventImage.image = UIImage(systemName: eventModel.eventImage)
+//            self.eventLabel.text = eventModel.eventName
+//        }
+//    }
+//
+//    func didFailWithError(error: Error) {
+//        print(error)
+//    }
+    
+
     /*
     // MARK: - Navigation
 
